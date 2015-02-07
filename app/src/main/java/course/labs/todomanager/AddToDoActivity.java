@@ -106,6 +106,12 @@ public class AddToDoActivity extends Activity {
 				Log.i(TAG, "Entered resetButton.OnClickListener.onClick()");
 
 				// TODO - Reset data to default values
+                mTitleText.setText("");
+                mStatusRadioGroup.check(R.id.statusNotDone);
+                mPriorityRadioGroup.check(R.id.medPriority);
+                setDefaultDateTime();
+
+                Log.i(TAG, "must be reset by now");
 
 			}
 		});
