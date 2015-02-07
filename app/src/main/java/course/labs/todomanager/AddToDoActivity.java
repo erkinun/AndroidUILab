@@ -93,8 +93,8 @@ public class AddToDoActivity extends Activity {
 
 				Log.i(TAG, "Entered cancelButton.OnClickListener.onClick()");
 
-				// TODO - Indicate result and finish
-
+                setResult(Activity.RESULT_CANCELED, null);
+                finish();
 			}
 		});
 

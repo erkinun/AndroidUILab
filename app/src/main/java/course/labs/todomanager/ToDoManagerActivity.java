@@ -60,7 +60,7 @@ public class ToDoManagerActivity extends ListActivity {
 
 				//TODO - Implement OnClick().
                 Intent newTodo = new Intent(v.getContext(), AddToDoActivity.class);
-                startActivity(newTodo);
+                startActivityForResult(newTodo, ADD_TODO_ITEM_REQUEST);
 			}
 		});
 
