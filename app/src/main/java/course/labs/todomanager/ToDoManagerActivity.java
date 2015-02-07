@@ -20,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 import course.labs.todomanager.ToDoItem.Priority;
 import course.labs.todomanager.ToDoItem.Status;
@@ -48,14 +49,13 @@ public class ToDoManagerActivity extends ListActivity {
 
 		// TODO - Inflate footerView for footer_view.xml file
 
-		TextView footerView = null;
+		TextView footerView = (TextView)getLayoutInflater().inflate(R.layout.footer_view, null);
 
 		// NOTE: You can remove this block once you've implemented the assignment
-		if (null == footerView) {
-			return;
-		}
-		// TODO - Add footerView to ListView
 
+		// TODO - Add footerView to ListView
+        getListView().addFooterView(footerView);
+        Log.i(TAG, "footer view added to list");
 		
 		footerView.setOnClickListener(new OnClickListener() {
 			@Override
@@ -68,6 +68,8 @@ public class ToDoManagerActivity extends ListActivity {
 		});
 
 		// TODO - Attach the adapter to this ListActivity's ListView
+        ListAdapter adapter = new ToDoListAdapter(this);
+        setListAdapter(adapter);
 		
 	}
 
