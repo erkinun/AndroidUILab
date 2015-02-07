@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.Date;
 
+import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -76,9 +77,14 @@ public class ToDoManagerActivity extends ListActivity {
 		Log.i(TAG,"Entered onActivityResult()");
 
 		// TODO - Check result code and request code
-		// if user submitted a new ToDoItem
-		// Create a new ToDoItem from the data Intent
-		// and then add it to the adapter
+        // if user submitted a new ToDoItem
+        if (requestCode == ADD_TODO_ITEM_REQUEST && resultCode == Activity.RESULT_OK) {
+            // Create a new ToDoItem from the data Intent
+            // and then add it to the adapter
+            ToDoItem item = new ToDoItem(data);
+            ToDoListAdapter adapter = (ToDoListAdapter) getListAdapter();
+            adapter.add(item);
+        }
 
 	}
 
