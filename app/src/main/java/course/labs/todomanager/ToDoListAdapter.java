@@ -88,21 +88,14 @@ public class ToDoListAdapter extends BaseAdapter {
 
 		final ToDoItem toDoItem = mItems.get(position);
 
-		// TODO - Inflate the View for this ToDoItem
 		// from todo_item.xml
         View view = ((Activity)mContext).getLayoutInflater().inflate(R.layout.todo_item, null);
 		RelativeLayout itemLayout = (RelativeLayout)view.findViewById(R.id.RelativeLayout1);
 
-		// TODO - Fill in specific ToDoItem data
-		// Remember that the data that goes in this View
-		// corresponds to the user interface elements defined
-		// in the layout file
 
-		// TODO - Display Title in TextView
 		final TextView titleView = (TextView)view.findViewById(R.id.titleView);
         titleView.setText(toDoItem.getTitle());
 
-		// TODO - Set up Status CheckBox
 		final CheckBox statusView = (CheckBox)view.findViewById(R.id.statusCheckBox);
         statusView.setChecked(toDoItem.getStatus() == ToDoItem.Status.DONE);
 
@@ -118,12 +111,10 @@ public class ToDoListAdapter extends BaseAdapter {
 			}
 		});
 
-		// TODO - Display Priority in a TextView
 
 		final TextView priorityView = (TextView)view.findViewById(R.id.priorityView);
         priorityView.setText(toDoItem.getPriority().toString());
 
-		// TODO - Display Time and Date.
 		// Hint - use ToDoItem.FORMAT.format(toDoItem.getDate()) to get date and
 		// time String
 

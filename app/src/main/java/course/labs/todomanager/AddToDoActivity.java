@@ -98,7 +98,6 @@ public class AddToDoActivity extends Activity {
 			}
 		});
 
-		// TODO - Set up OnClickListener for the Reset Button
 		final Button resetButton = (Button) findViewById(R.id.resetButton);
 		resetButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -125,13 +124,10 @@ public class AddToDoActivity extends Activity {
 
 				// gather ToDoItem data
 
-				// TODO - Get the current Priority
 				Priority priority = getPriority();
 
-				// TODO - Get the current Status
 				Status status = getStatus();
 
-				// TODO - Get the current ToDoItem Title
 				String titleString = getToDoTitle();
 
 				// Construct the Date string
@@ -142,8 +138,7 @@ public class AddToDoActivity extends Activity {
 				ToDoItem.packageIntent(data, titleString, priority, status,
 						fullDate);
 
-				// TODO - return data Intent and finish
-                setResult(Activity.RESULT_OK, data);
+				setResult(Activity.RESULT_OK, data);
                 finish();
 
 			}
