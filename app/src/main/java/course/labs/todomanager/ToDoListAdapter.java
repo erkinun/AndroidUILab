@@ -105,8 +105,6 @@ public class ToDoListAdapter extends BaseAdapter {
 					boolean isChecked) {
 				Log.i(TAG, "Entered onCheckedChanged()");
 
-				// TODO - set up an OnCheckedChangeListener, which
-				// is called when the user toggles the status checkbox
                 if (isChecked == true) {
                     toDoItem.setStatus(ToDoItem.Status.DONE);
                 }
